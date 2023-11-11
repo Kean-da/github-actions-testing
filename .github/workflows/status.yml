@@ -3,7 +3,7 @@ name: feature-workflow-new-status
 on:
   push:
     branches:
-      - develop
+      - feature/new-status
 
 jobs:
   build:
