@@ -31,6 +31,6 @@ describe("Testing GitCommand.status()", function(){
         let git = new GitCommand(wd);
         let output = git.status();
 
-        expect(output).to.equal('true');
+        expect(output).to.equal('You have 0 change/s.\n');
     });
 })
