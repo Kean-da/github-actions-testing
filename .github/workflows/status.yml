@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - feature/new-status
-
+  pull_request:
+    branches:
+      - develop
+      
 jobs:
   build:
     runs-on: ubuntu-latest
