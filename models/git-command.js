@@ -28,6 +28,20 @@ class GitCommand {
         }
     }
 
+    //Command: git rm -r
+    remove_file(location, file_name) {
+        let path_file = `${location}/${file_name}`;
+
+        console.log(path_file);
+
+        Object.keys(this.working_directory.files).forEach(key => {
+            if(key === path_file) {
+                this.working_directory.files.key = undefined;
+                console.log("NAA");
+            }
+        });
+    }
+
     //Command: git add <filename/file directory/wildcard> 
     add(path_file){
         let modified_files = this.working_directory.new_changes;
