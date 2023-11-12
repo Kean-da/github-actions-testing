@@ -14,6 +14,32 @@ class GitCommand {
         /*
             Create logic here and run unit testing.
         */
+        const modified_files        = this.working_directory.new_changes;
+        const numberOfPath_file     = Object.keys(modified_files).length; 
+        let message                 = `You have ${numberOfPath_file} change/s.`;
+     
+        if(numberOfPath_file > 0) {
+            for(const key in modified_files) {
+                    message += `\n${key}`;
+            }
+            return message;
+        } else {
+            return 'You have 0 change/s.\n';
+        }
+    }
+
+    //Command: git rm -r
+    remove_file(location, file_name) {
+        let path_file = `${location}/${file_name}`;
+
+        console.log(path_file);
+
+        Object.keys(this.working_directory.files).forEach(key => {
+            if(key === path_file) {
+                this.working_directory.files.key = undefined;
+                console.log("NAA");
+            }
+        });
     }
 
     //Command: git add <filename/file directory/wildcard> 
